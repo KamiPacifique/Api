@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artists</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1 id="title">Artists</h1>
+      <div class="actions">
+        <button id="refresh" class="secondary" type="button">Refresh</button>
+        <button id="add" type="button">Add artist</button>
+      </div>
+    </header>
+    <p id="status" role="status"></p>
+    <section id="output"></section>
+  </main>
+
+  <dialog id="artist-dialog" aria-labelledby="form-title">
+    <form id="artist-form">
+      <h2 id="form-title">Add artist</h2>
+      <label>
+        Name
+        <input id="artist-name" type="text" required pattern=".*\S.*" title="Enter a name" autocomplete="off">
+      </label>
+      <label>
+        Photo URL (optional)
+        <input id="artist-avatar" type="url" placeholder="https://…" autocomplete="off">
+      </label>
+      <p id="form-error" class="form-error" role="alert"></p>
+      <div class="actions">
+        <button id="form-cancel" class="secondary" type="button">Cancel</button>
+        <button id="form-save" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
